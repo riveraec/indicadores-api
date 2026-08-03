@@ -1,0 +1,53 @@
+@Indicadores.Api_HostAddress = http://localhost:5080
+
+### Health
+GET {{Indicadores.Api_HostAddress}}/health
+
+### Resumen por categoría
+GET {{Indicadores.Api_HostAddress}}/api/indicadores/resumen
+Accept: application/json
+
+### Resumen con rango de fechas
+GET {{Indicadores.Api_HostAddress}}/api/indicadores/resumen?desde=2026-01-01T00:00:00Z&hasta=2026-12-31T23:59:59Z
+Accept: application/json
+
+### Listar
+GET {{Indicadores.Api_HostAddress}}/api/indicadores
+Accept: application/json
+
+### Listar con filtro
+GET {{Indicadores.Api_HostAddress}}/api/indicadores?categoria=latencia
+Accept: application/json
+
+### Obtener por id
+GET {{Indicadores.Api_HostAddress}}/api/indicadores/1
+Accept: application/json
+
+### Crear
+POST {{Indicadores.Api_HostAddress}}/api/indicadores
+Content-Type: application/json
+
+{
+  "nombre": "Latencia p95 API pagos",
+  "categoria": "latencia",
+  "valor": 120.5,
+  "unidad": "ms",
+  "fechaMedicion": "2026-08-02T18:00:00Z",
+  "origen": "monitor-pagos"
+}
+
+### Actualizar
+PUT {{Indicadores.Api_HostAddress}}/api/indicadores/1
+Content-Type: application/json
+
+{
+  "nombre": "Latencia p95 API pagos",
+  "categoria": "latencia",
+  "valor": 98.2,
+  "unidad": "ms",
+  "fechaMedicion": "2026-08-02T19:00:00Z",
+  "origen": "monitor-pagos"
+}
+
+### Eliminar
+DELETE {{Indicadores.Api_HostAddress}}/api/indicadores/1
