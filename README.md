@@ -74,6 +74,15 @@ Al arrancar:
 1. Crea el esquema SQLite si no existe (`EnsureCreated`)
 2. Carga 10 indicadores de ejemplo si la tabla está vacía (seed idempotente)
 
+### Docker (si Windows bloquea el `.exe` / Smart App Control)
+
+```powershell
+docker build -t indicadores-api:local .
+docker run --rm -p 5080:8080 --name indicadores-api indicadores-api:local
+```
+
+Misma URL: http://localhost:5080/swagger
+
 ---
 
 ## URLs útiles
