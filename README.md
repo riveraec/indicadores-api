@@ -1,5 +1,7 @@
 # Indicadores API
 
+[![CI](https://github.com/riveraec/indicadores-api/actions/workflows/ci.yml/badge.svg)](https://github.com/riveraec/indicadores-api/actions/workflows/ci.yml)
+
 API REST para gestión de **indicadores de desempeño** (métricas). Proyecto demo con **.NET 8**, **EF Core**, **SQLite**, **ProblemDetails**, **Swagger** y pruebas **xUnit**.
 
 Incluye CRUD con filtros y un endpoint de **resumen** (agregados por categoría): cantidad, promedio, mínimo y máximo.
@@ -198,6 +200,14 @@ dotnet test
 ```
 
 Cubre el servicio: resumen (agregados y filtro de fechas), 404, crear y filtro por categoría (EF InMemory).
+
+### CI (GitHub Actions)
+
+En cada push/PR a `main`, Actions corre `dotnet test` (workflow [`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
+
+- Runner: .NET **8.0.x**
+- Historial: https://github.com/riveraec/indicadores-api/actions  
+- Badge arriba del README = estado del último run.
 
 ---
 
